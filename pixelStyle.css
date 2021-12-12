@@ -4,13 +4,14 @@ html,body{
     width: 100%;
     margin: 0; 
     padding: 0;
+    flex-flow: column;
 }
 
 .navbar{
     width: 100%;
     height:85px;
     background-color: rgb(3, 169, 244);  
-    display: inline-block;
+    display: flexbox;
 }
 .logo{
     height: 90px;
@@ -42,11 +43,15 @@ html,body{
     background-color: rgb(33, 33, 33);  
     width: 200px;
     height:100%;
-    display: inline-block;
-    margin-right: -4px;
-    margin-bottom: -4px; 
-    vertical-align: top;
+    display: flex;
     text-align: left;
+}
+.all-buttons{
+    width:100%;
+    height: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+
 }
 .tool-buttons:hover{
     background-color: rgb(255,145,0);
@@ -60,7 +65,7 @@ html,body{
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;  
-    width: 97%;
+    width: 98%;
     background-color: rgb(117,117,117);
     text-align: left;
     border-radius: 2px;
@@ -68,21 +73,21 @@ html,body{
 }
 .content{
     width: 80%;
-    height: 50px;
-    border:solid rgb(245,245,245) 1px;
+    min-height: 60px;
+    border: solid rgb(245,245,245) 1px;
     border-radius: 2px;
     margin-bottom: 5px;
     margin-top: 10px;
-    display: inherit;
+    display: flex;
     background-color: rgb(245,245,245);
-    box-shadow: 0px 5px 5px rgba(245, 245, 245, 0.466);
-    text-align: left;
-    padding-top:5px;
+    box-shadow: 0px 5px 5px rgb(245 245 245 / 47%);
+    padding-top: 5px;
     transition-duration: 1s;
-    
+    justify-content: center;
+    align-items: center;
 }
 .content:hover{
-    height: 75px;
+    min-height: 75px;
     width: 90%;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -90,25 +95,26 @@ html,body{
 .header{
     height: 90%;
     width: 180px;
-    display: inline-block ;
+    display: flex ;
+    flex-direction: column;
     border-right: black solid 1px;
 }
 
 .main-header{
-    display: block;
+    display: flex;
     font-family:Verdana, sans-serif;
     font-size: 26px;
     letter-spacing: -0.03em;
 }
 .from{
-    display: block;
+    display: flex;
     font-size: 14px;
 }
 
 .message{
     height: 100%;
     width: calc(100% - 215px);
-    display:inline-block;
+    display:flex;
     font-family:Verdana, sans-serif;
     vertical-align:top;
     font-size: 14px;
@@ -118,7 +124,7 @@ html,body{
 .message-importance{
     height: 100%;
     width: 25px;
-    display: inline-block;
+    display: flex;
     position: relative;
     vertical-align: bottom;
     top: 55%;
@@ -132,6 +138,8 @@ html,body{
 .main-menu{
     height: calc(100% - 85px);
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .content-space{
@@ -140,7 +148,9 @@ html,body{
     overflow-x: hidden;
     height: 100%;
     width: calc(100% - 200px);
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-right: -4px;
     margin-bottom: -4px; 
     text-align: center;
