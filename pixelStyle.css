@@ -4,23 +4,24 @@ html,body{
     width: 100%;
     margin: 0; 
     padding: 0;
-    flex-flow: column;
+    overflow: hidden;
 }
 
-.navbar{
-    width: 100%;
-    height:85px;
+.navbar{  
+   min-height:85px;
     background-color: rgb(3, 169, 244);  
-    display: flexbox;
+    align-content: center;
+    display: flex;
 }
 .logo{
-    height: 90px;
+    display: flex;
+    padding-left: 5px;
     width: 185px;
-    text-align: center;
+    flex-flow: row nowrap;
 }
 .envelope{
-    display: inline;
-    margin-top: 25px;
+    display: flex;
+    align-self: center;
 }
 
 .envelope:hover{
@@ -28,10 +29,13 @@ html,body{
 }
 
 .header-mail{
-    display: inline;
+    padding-top: 15px;
+    margin: 0;
     color: white;
     font-family: sans-serif;
     font-size: xx-large;
+    display: flex;
+    align-self: center;
 }
 
 .header-mail:hover{
@@ -39,19 +43,23 @@ html,body{
     animation-iteration-count: infinite;
     font-size: 60px;
 }
+
+.main-menu{
+    display: flex;
+    flex-flow: row;
+    height: calc(100% - 85px);
+}
+
 .toolbar{
     background-color: rgb(33, 33, 33);  
     width: 200px;
-    height:100%;
     display: flex;
+    flex-flow: column nowrap;
     text-align: left;
 }
 .all-buttons{
-    width:100%;
-    height: 30%;
     display: flex;
     flex-flow: column nowrap;
-
 }
 .tool-buttons:hover{
     background-color: rgb(255,145,0);
@@ -74,17 +82,21 @@ html,body{
 .content{
     width: 80%;
     min-height: 60px;
-    border: solid rgb(245,245,245) 1px;
+    border: solid rgb(245,245,245) 1px ;
     border-radius: 2px;
     margin-bottom: 5px;
     margin-top: 10px;
     display: flex;
+    flex-flow: row;
     background-color: rgb(245,245,245);
     box-shadow: 0px 5px 5px rgb(245 245 245 / 47%);
     padding-top: 5px;
     transition-duration: 1s;
-    justify-content: center;
-    align-items: center;
+}
+.content:nth-of-type(odd)
+{
+    background-color: rgb(177, 171, 171);
+
 }
 .content:hover{
     min-height: 75px;
@@ -113,20 +125,19 @@ html,body{
 
 .message{
     height: 100%;
-    width: calc(100% - 215px);
     display:flex;
+    flex: 1;
     font-family:Verdana, sans-serif;
     vertical-align:top;
     font-size: 14px;
     overflow: hidden;
+    padding: 2px;
 }
 
 .message-importance{
-    height: 100%;
     width: 25px;
     display: flex;
     position: relative;
-    vertical-align: bottom;
     top: 55%;
    background: url("redsign.png") no-repeat ;
 }
@@ -135,26 +146,14 @@ html,body{
    background: url("redsignG.png") no-repeat ;
 }
 
-.main-menu{
-    height: calc(100% - 85px);
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-}
-
 .content-space{
-    overflow: scroll;
-    overflow-y: auto; 
-    overflow-x: hidden;
-    height: 100%;
-    width: calc(100% - 200px);
+    overflow-y:scroll; 
     display: flex;
-    flex-direction: column;
+    flex: 1;
+    flex-flow: column nowrap;
     align-items: center;
-    margin-right: -4px;
-    margin-bottom: -4px; 
-    text-align: center;
     background-color: rgb(66,66,66);
+    min-height: 0px;
 }
 .floating-button{
     border: 0px;
@@ -165,9 +164,8 @@ html,body{
     height: 40px;
     min-height: 20px;
     position: absolute;
-    object-position: 90%;
     bottom: 7.5px;
-    right: 25px;
+    right: 7.5px;
     cursor: pointer;
 }
 .floating-button:hover{
